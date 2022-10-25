@@ -27,22 +27,16 @@ function createGalleryMarkup(galleryItems) {
 function onGalleryClick(evt) {
   evt.preventDefault();
   if (!evt.target.classList.contains("gallery__image")) {
-    return console.log(`not that`);
+    return;
   }
-  const source = evt.target.dataset.source;
+  // openCloseModal();
+  // console.log("clicked");
 }
 
-// var lightbox = $(".gallery a").simpleLightbox({
-//   /* options */
-// });
-
-// lightbox();
-
-let gallery = new SimpleLightbox(".gallery a");
-gallery.on("show.simplelightbox", function () {
-  // do something…
+// function openCloseModal() {
+let galleryModal = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionPosition: "bottom",
+  captionDelay: 250,
 });
-
-gallery.on("error.simplelightbox", function (e) {
-  console.log(e); // some usefull information
-});
+// }
