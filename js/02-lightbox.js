@@ -8,7 +8,7 @@ const refs = {
 const galleryMarkup = createGalleryMarkup(galleryItems);
 refs.gallery.insertAdjacentHTML("beforeend", galleryMarkup);
 
-refs.gallery.addEventListener("click", onGalleryClick);
+//refs.gallery.addEventListener("click", onGalleryClick);
 
 function createGalleryMarkup(galleryItems) {
   return galleryItems
@@ -24,19 +24,25 @@ function createGalleryMarkup(galleryItems) {
     .join(" ");
 }
 
-function onGalleryClick(evt) {
-  evt.preventDefault();
-  if (!evt.target.classList.contains("gallery__image")) {
-    return;
-  }
-  // openCloseModal();
-  // console.log("clicked");
-}
-
-// function openCloseModal() {
-let galleryModal = new SimpleLightbox(".gallery a", {
+new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionPosition: "bottom",
   captionDelay: 250,
 });
+
+// function onGalleryClick(evt) {
+//   evt.preventDefault();
+//   if (!evt.target.classList.contains("gallery__image")) {
+//     return;
+//   }
+//   // openCloseModal();
+//   // console.log("clicked");
 // }
+
+// // function openCloseModal() {
+// let galleryModal = new SimpleLightbox(".gallery a", {
+//   captionsData: "alt",
+//   captionPosition: "bottom",
+//   captionDelay: 250,
+// });
+// // }
